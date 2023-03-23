@@ -10,9 +10,23 @@
     <a asp-controller="Events" asp-action="Add">Add Event</a>
 </p>
 
-<ul>
-    @foreach (string meeting in ViewBag.events)
+@* <tr> is a row, <th> adds table headings *@
+@if(ViewBag.events.Count>0){
+<table>
+    <tr> 
+        <th>   
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+    </tr>
+    @foreach (KeyValuePair<string, string> e in ViewBag.events)
     {
-        <li>@meeting</li>
+        <tr>
+            <td>@e.Key</td>
+            <td>@e.Value</td>
+        </tr>
     }
-</ul>
+</table>
+}
