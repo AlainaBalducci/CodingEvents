@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Components.Routing;
+using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace CodingEvents.Models
 {
 	public class Event
@@ -6,6 +9,9 @@ namespace CodingEvents.Models
 		public string? Name { get; set; }
 		public string? Description { get; set; }
 		public string? ContactEmail { get; set; }
+		public string? Location { get; set; }
+		public int? NumOfAttendees { get; set; }
+			 
 
 		public int Id { get; set; }
 		static private int nextId = 1;
@@ -16,10 +22,13 @@ namespace CodingEvents.Models
 			nextId++;
 		}
 
-		public Event(string name, string description)
+		public Event(string name, string description, string contactEmail, string location, int numOfAttendees) 
 		{
 			Name = name;
 			Description = description;
+			ContactEmail = contactEmail;
+			Location = location;
+			NumOfAttendees = numOfAttendees;
 			Id = nextId;
 			nextId++;
 		}
