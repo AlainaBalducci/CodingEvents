@@ -19,7 +19,16 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Events" asp-action="Add">Add</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Events" asp-action="Add">Add Event</a>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Events" asp-action="Index">View Events</a>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="EventCategory/Create" asp-action="Create">Create Categories</a>
+                    </ul>
+                    <ul class="navbar-nav flex-grow-1">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="EventCategory/Index" asp-action="Index">View Categories</a>
                     </ul>
                 </div>
             </div>
