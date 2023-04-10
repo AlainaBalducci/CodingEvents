@@ -7,6 +7,7 @@ using CodingEvents.Models;
 using Microsoft.AspNetCore.Mvc;
 using CodingEvents.ViewModels;
 using Microsoft.EntityFrameworkCore;
+using CodingEvents.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -79,6 +80,14 @@ namespace CodingEvents.Controllers
             context.SaveChanges();
 
             return Redirect("/Events");
+        }
+
+        public IActionResult Detail(int id)
+        {
+            Event theEvent = context.Events.Include(e => e.Category).Single(e => e.Id == id);
+
+            EventDetailViewModel viewModel = new EventDetailViewModel(theEvent);
+            return View(viewModel);
         }
     }
 }
