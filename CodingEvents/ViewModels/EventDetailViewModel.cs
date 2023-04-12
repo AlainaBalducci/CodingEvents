@@ -15,7 +15,7 @@ namespace CodingEvents.ViewModels
        
         
 
-        public EventDetailViewModel(Event theEvent, List<Tag> eventTags)
+        public EventDetailViewModel(Event theEvent)
         {
             EventId = theEvent.Id;
             Name = theEvent.Name;
