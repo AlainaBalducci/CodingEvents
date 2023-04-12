@@ -12,21 +12,24 @@ namespace CodingEvents.ViewModels
         public string ContactEmail { get; set; }
         public string CategoryName { get; set; }
         public string TagText { get; set; }
+        public int EventId { get; set; }
+        
 
-        public EventDetailViewModel(Event theEvent)
+        public EventDetailViewModel(Event theEvent, List<Tag> eventTags)
         {
             EventId = theEvent.Id;
             Name = theEvent.Name;
             Description = theEvent.Description;
             ContactEmail = theEvent.ContactEmail;
             CategoryName = theEvent.Category.Name;
+
             TagText = "";
             List<Tag> evtTags = theEvent.Tags.ToList();
 
-            for (int i = 0; i< evtTags.Count; i++)
+            for(var i = 0; i < evtTags.Count; i++)
             {
                 TagText += ("#" + evtTags[i].Name);
-                if (i < evtTags.Count - 1)
+                if (i < evtTags.Count - 1 )
                 {
                     TagText += ", ";
                 }

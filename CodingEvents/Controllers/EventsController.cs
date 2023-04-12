@@ -7,6 +7,8 @@ using CodingEvents.Models;
 using CodingEvents.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using CodingEvents.ViewModels;
+using System.Diagnostics.Eventing.Reader;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -86,9 +88,9 @@ namespace CodingEvents.Controllers
         public IActionResult Detail(int id)
         {
             Event theEvent = context.Events
-               .Include(e => e.Category)
-               .Include(e => e.Tags)
-               .Single(e => e.Id == id);
+                .Include(e => e.Category)
+                .Include(e => e.Tags)
+                .Single(e => e.Id == id);
 
             EventDetailViewModel viewModel = new EventDetailViewModel(theEvent);
             return View(viewModel);
