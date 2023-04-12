@@ -12,7 +12,7 @@ namespace CodingEvents.ViewModels
         public string ContactEmail { get; set; }
         public string CategoryName { get; set; }
         public string TagText { get; set; }
-        public int EventId { get; set; }
+       
         
 
         public EventDetailViewModel(Event theEvent, List<Tag> eventTags)
